@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="645.0" prefWidth="1046.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c195.View_Controller.MainScreenController">
+   <children>
+      <SplitPane dividerPositions="0.3112807463952502" prefHeight="562.0" prefWidth="1066.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane prefHeight="560.0" prefWidth="315.0">
+               <children>
+                  <Button fx:id="addCustomerButton" layoutX="121.0" layoutY="378.0" mnemonicParsing="false" onAction="#addCustomerClicked" text="Add Customer" />
+                  <TableView fx:id="customerTableView" layoutX="20.0" layoutY="28.0" prefHeight="331.0" prefWidth="295.0">
+                     <columns>
+                        <TableColumn fx:id="customerNameColumn" prefWidth="294.0" text="Customer Name" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="updateCustomer" layoutX="225.0" layoutY="520.0" mnemonicParsing="false" onAction="#updateCustomerList" text="Clear" />
+                  <Button fx:id="deleteCustomer" layoutX="182.0" layoutY="412.0" mnemonicParsing="false" onAction="#deleteCustomerClicked" text="Delete Customer" />
+                  <Button fx:id="modifyCustomer" layoutX="47.0" layoutY="412.0" mnemonicParsing="false" onAction="#modifyCustomerClicked" text="View/Edit Customer" />
+                  <TextField fx:id="searchCustomerField" layoutX="93.0" layoutY="487.0" prefHeight="25.0" prefWidth="175.0" promptText="Customer Search" />
+                  <Button fx:id="searchCustomerButton" layoutX="168.0" layoutY="520.0" mnemonicParsing="false" onAction="#searchCustomerClicked" text="Search" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="643.0" prefWidth="661.0">
+               <children>
+                  <TableView fx:id="appointmentTableView" layoutX="43.0" layoutY="30.0" prefHeight="414.0" prefWidth="572.0">
+                     <columns>
+                        <TableColumn fx:id="appointmentCNameColumn" prefWidth="135.0" text="Customer" />
+                        <TableColumn fx:id="appointmentLocationColumn" prefWidth="77.0" text="Location" />
+                        <TableColumn fx:id="appointmentTypeColumn" prefWidth="98.0" text="Type" />
+                        <TableColumn fx:id="appointmentDateColumn" prefWidth="77.0" text="Date" />
+                        <TableColumn fx:id="appointmentStartTimeColumn" prefWidth="96.0" text="Start Time" />
+                        <TableColumn fx:id="appointmentEndTimeColumn" prefWidth="88.0" text="End Time" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="addAppointmentButton" layoutX="121.0" layoutY="448.0" mnemonicParsing="false" onAction="#addAppointmentClicked" text="Add Apointment" />
+                  <Button fx:id="modifyAppointment" layoutX="28.0" layoutY="478.0" mnemonicParsing="false" onAction="#modifyAppointmentClicked" text="View/Edit Appointment" />
+                  <Button fx:id="deleteAppointment" layoutX="174.0" layoutY="478.0" mnemonicParsing="false" onAction="#deleteAppointmentClicked" text="Delete Appointment" />
+                  <Button fx:id="weeklyCalendarToggle" layoutX="393.0" layoutY="478.0" mnemonicParsing="false" onAction="#weeklySelected" text="Week" />
+                  <Button fx:id="monthlyCalendarToggle" layoutX="454.0" layoutY="478.0" mnemonicParsing="false" onAction="#monthlySelected" text="Month" />
+                  <Label layoutX="395.0" layoutY="452.0" text="View appointments by" />
+                  <Label layoutX="309.0" layoutY="530.0" text="Reports" />
+                  <ButtonBar layoutX="168.0" layoutY="555.0" prefHeight="81.0" prefWidth="322.0">
+                     <buttons>
+                        <Button fx:id="typeReportButton" mnemonicParsing="false" onAction="#typeReportButtonClicked" prefHeight="84.0" prefWidth="93.0" text="Number of appointment types by month" wrapText="true" />
+                        <Button fx:id="scheduleReportButton" mnemonicParsing="false" onAction="#scheduleReportButtonClicked" prefHeight="84.0" prefWidth="81.0" text="Schedule for each consultant" wrapText="true" />
+                        <Button fx:id="locationReportButton" mnemonicParsing="false" onAction="#locationReportButtonClicked" prefHeight="84.0" prefWidth="93.0" text="Number of appointments by location" wrapText="true" />
+                     </buttons>
+                  </ButtonBar>
+                  <Label layoutX="43.0" layoutY="6.0" text="Times and dates are shown in your local time zone." />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
